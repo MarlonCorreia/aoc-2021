@@ -45,22 +45,18 @@ func part1(digits []int) int {
 
 func part2(digits []int) int {
 	result := 0
-	var sums []int
+	last_sum := 0
 
 	for i := 0; i < len(digits); i++ {
 		if i+3 > len(digits) {
 			break
 		}
 		cur := _sum(digits[i : i+3])
-		sums = append(sums, cur)
-	}
 
-	for idx, sum := range sums {
-		if idx == 0 {
-			continue
-		} else if sum > sums[idx-1] {
+		if i != 0 && cur > last_sum {
 			result++
 		}
+		last_sum = cur
 	}
 
 	return result
