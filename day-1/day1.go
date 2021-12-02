@@ -33,10 +33,8 @@ func main() {
 func part1(digits []int) int {
 	result := 0
 
-	for idx, digit := range digits {
-		if idx == 0 {
-			continue
-		} else if digit > digits[idx-1] {
+	for idx, digit := range digits[1:] {
+		if digit > digits[idx] {
 			result++
 		}
 	}
@@ -45,27 +43,11 @@ func part1(digits []int) int {
 
 func part2(digits []int) int {
 	result := 0
-	last_sum := 0
 
-	for i := 0; i < len(digits); i++ {
-		if i+3 > len(digits) {
-			break
-		}
-		cur := _sum(digits[i : i+3])
-
-		if i != 0 && cur > last_sum {
+	for idx, digit := range digits[3:] {
+		if digit > digits[idx] {
 			result++
 		}
-		last_sum = cur
-	}
-
-	return result
-}
-
-func _sum(numbs []int) int {
-	var result int
-	for _, val := range numbs {
-		result += val
 	}
 	return result
 }
