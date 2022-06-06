@@ -40,7 +40,7 @@ def part2(points):
     return res
 
 
-with open('/home/marlinho/aoc-2021/05/input.txt') as f:
+with open('input.txt') as f:
     points = []
 
     for line in f.readlines():

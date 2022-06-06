@@ -29,7 +29,7 @@ def part2(steps):
 
 
 
-with open('/home/marlinho/projects/aoc-2021/07/input.txt') as f:
+with open('input.txt') as f:
     steps = [int(x) for x in f.read().split(',')]
 
     p1 = part1(steps)

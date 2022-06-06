@@ -18,7 +18,7 @@ def resolve(board, days):
     print(sum(board))
 
  
-with open('/home/marlinho/projects/aoc-2021/06/input.txt') as f:
+with open('input.txt') as f:
     board = [0 for _ in range(0, 9)]
     for idx in f.read().split(','):
         board[int(idx)] += 1    
